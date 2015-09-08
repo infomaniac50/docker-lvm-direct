@@ -1,0 +1,20 @@
+[Unit]
+Description=Docker Application Container Engine
+Documentation=https://docs.docker.com
+After=network.target docker.socket
+Requires=docker.socket
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/docker daemon -H fd:// \
+-s devicemapper \
+--storage-opt dm.thinpooldev=/dev/mapper/docker-docker--data \
+--storage-opt dm.fs=xfs \
+--storage-opt dm.blocksize=16k
+MountFlags=slave
+LimitNOFILE=1048576
+LimitNPROC=1048576
+LimitCORE=infinity
+
+[Install]
+WantedBy=multi-user.target
