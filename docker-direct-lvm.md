@@ -137,7 +137,9 @@ If everything is working properly then docker will create a new graph at /var/li
 
 ## Your Done
 
-What? Were you looking for more? OK, here's some links:
+What? Were you looking for more?
+
+OK, here's some links:
 
 - https://docs.docker.com/reference/commandline/daemon/
 - https://docs.docker.com/reference/commandline/daemon/#storage-driver-options
